@@ -1,0 +1,2 @@
+autotest的配置.
+使用时，首先需要sudo gem install ZenTest，然后把本目录的文件复制到用户home目录，同时把dot_改为“."，如.autotest。
