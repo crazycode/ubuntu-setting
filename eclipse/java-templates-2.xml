@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="java" deleted="false" description="断言相等" enabled="true" name="ase">assertEquals(${var}, ${localVar});
+${:importStatic(org.junit.Assert.assertEquals)}</template><template autoinsert="true" context="java" deleted="false" description="断言为假" enabled="true" name="asf">assertFalse(${var});${:importStatic(org.junit.Assert.assertFalse)}</template><template autoinsert="true" context="java" deleted="false" description="断言为空" enabled="true" name="asn">assertNull(${var});
+${:importStatic(org.junit.Assert.assertNull)}
+</template><template autoinsert="true" context="java" deleted="false" description="断言不相等" enabled="true" name="asne">assertNotSame(${var}, ${localVar});
+${:importStatic(org.junit.Assert.assertNotSame)}</template><template autoinsert="true" context="java" deleted="false" description="断言非空" enabled="true" name="asnn">assertNotNull(${var});
+${:importStatic(org.junit.Assert.assertNotNull)}</template><template autoinsert="true" context="java" deleted="false" description="断言为真" enabled="true" name="ast">assertTrue(${var});${:importStatic(org.junit.Assert.assertTrue)}</template><template autoinsert="true" context="java" deleted="false" description="单例模式" enabled="true" name="singleton">/**
+ * 单例.
+ */
+private static ${enclosing_type} _instance;
+
+/**
+ * 私有化构造函数以实现单例模式.
+ */
+private ${enclosing_type}() {
+}
+
+/**
+ * 获取单例.
+ */
+public static ${enclosing_type} getInstance() {
+	if (_instance == null) {
+		_instance = new ${enclosing_type}();
+	}
+	return _instance;
+}
+</template><template autoinsert="true" context="java" deleted="false" description="线程安全的单例模式" enabled="true" name="singleton_synchronized">/**
+ * 单例.
+ */
+private static ${enclosing_type} _instance;
+
+/**
+ * 私有化构造函数以实现单例模式.
+ */
+private ${enclosing_type}() {
+}
+
+/**
+ * 线程安全地获取单例.
+ */
+public static ${enclosing_type} getInstance() {
+	if (_instance == null) {
+       synchronized (${enclosing_type}.class) {
+            if (_instance == null) {
+                _instance = new ${enclosing_type}();
+            }
+        }
+	}
+	return _instance;
+}</template></templates>
